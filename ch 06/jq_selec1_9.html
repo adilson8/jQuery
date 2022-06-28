@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 선택자 </title>
+
+	<script src="js/jquery.js"></script>
+
+	<script>
+		$(function () {
+			// 자식 선택자 (손자 선택x)
+			$("#wrap > h1").css("border", "2px dashed red");
+
+			// 자식 선택자
+			$("#wrap > section")
+			.children() // 모든 자식들을 선택하라!
+			.css({
+				backgroundColor: "yellow",
+				border: "2px solid blue"
+			});
+		});
+
+		$(function(){
+			$("#wrap > h1")
+		})
+	</script>
+</head>
+
+<body>
+	<div id="wrap">
+		<h1>인접 관계 선택자</h1>
+
+		<p>내용1</p>
+
+		<section>
+			<h1>자식 요소 선택자</h1>
+			<p>내용2</p>
+		</section>
+	</div>
+</body>
+
+</html>

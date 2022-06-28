@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 선택자 </title>
+
+	<script src="js/jquery.js"></script>
+
+	<script>
+		$(function () {
+			// 위의 부모 요소노드 중 가장 가까운 div 노드를 선택
+			$(".txt1").closest("div")
+				.css({
+					border: "2px solid #f00"
+				});
+		});
+	</script>
+</head>
+
+<body>
+	<h1 class="title">선택자</h1>
+
+	<div>
+		<div>
+			<p class="txt1">내용</p>
+		</div>
+	</div>
+</body>
+
+</html>

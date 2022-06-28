@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 탐색 선택자 </title>
+	
+	<script src="js/jquery.js"></script>
+
+	<script>
+		$(function () {
+			// 후손선택자 (공백) + 구조적 가상클래스 선택자 (:even, :odd)
+			// *** 이 경우 배열처럼 0번으로 시작하기 때문에 혼동 주의해야한다
+			$("#menu li:even").css({ backgroundColor: "red" });
+			$("#menu li:odd").css({ backgroundColor: "blue" });
+		});
+	</script>
+</head>
+
+<body>
+	<h1>탐색 선택자</h1>
+
+	<ul id="menu">
+		<li>내용1</li>
+		<li>내용2</li>
+		<li>내용3</li>
+		<li>내용4</li>
+	</ul>
+</body>
+
+</html>

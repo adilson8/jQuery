@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 탐색 선택자 </title>
+
+	<script src="js/jquery.js"></script>
+
+	<script>
+		$(function () {
+			// eq(n)메소드 : 지정된 인덱스 번호와 일치하는 요소노드를 선택
+			$("#menu li").eq(2).css({ backgroundColor: "red" });
+			
+			// lt(n) 메소드 : less than 지정된 인덱스 번호보다 작은 요소노드 선택
+			$("#menu li:lt(2)").css({ backgroundColor: "green" });
+			
+			// lt(n) 메소드 : greater than 지정된 인덱스 번호보다 큰 요소노드 선택
+			$("#menu li:gt(2)").css({ backgroundColor: "blue" });
+		});
+	</script>
+</head>
+
+<body>
+	<h1>탐색 선택자</h1>
+
+	<ul id="menu">
+		<li>내용1</li>
+		<li>내용2</li>
+		<li>내용3</li>
+		<li>내용4</li>
+		<li>내용5</li>
+	</ul>
+</body>
+
+</html>

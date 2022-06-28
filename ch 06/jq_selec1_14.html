@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 선택자 </title>
+
+	<script src="js/jquery.js"></script>
+
+	<script>
+		$(function () {
+			// 선택한 요소노드 기준으로 모든 부모 요소 노드를 선택 (html, body 태그까지 선택함)
+			$(".txt1").parents()
+				.css({
+					border: "2px solid blue"
+				});
+
+			// 선택한 요소노드 기준으로 div 태그가 나올때 까지 모든 부모 요소 노드 선택
+			$(".txt2").parents("div")
+				.css({
+					border: "2px solid red"
+				});
+		});
+
+		$(function(){
+			$(".txt1").parents().css();
+			$(".txt1").parents("div").css();
+		})
+	</script>
+</head>
+
+<body>
+	<h1 class="title">선택자</h1>
+
+	<section>
+		<div>
+			<p class="txt1">내용</p>
+		</div>
+	</section>
+
+	<section>
+		<div>
+			<p class="txt2">내용</p>
+		</div>
+	</section>
+</body>
+
+</html>
