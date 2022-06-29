@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 객체 조작 및 생성 </title>
+
+	<script src="js/jquery.js"></script>
+
+	<style>
+		.aqua {
+			background-color: aqua;
+		}
+
+		.red {
+			background-color: red;
+		}
+
+		.green {
+			background-color: green;
+		}
+
+		.yellow {
+			background-color: yellow;
+		}
+	</style>
+
+	<script>
+		$(function () {
+			$("#p1").addClass("aqua");      // class='aqua' 추가
+			$("#p2").removeClass("red");    // class='red' 삭제
+			$("#p3").toggleClass("green");  // class='green' 있으면 삭제, 없으면 추가
+			$("#p4").toggleClass("green");  // class='green' 있으면 삭제, 없으면 추가
+			
+			// 선택한 요소노드는 6번째 p태그, 이 텍스트는 
+			// #p5 노드에 class="yellow"가 있는지 따라 boolean 값을 전달
+			$("#p6").text($("#p5").hasClass("yellow"));
+		});
+	</script>
+</head>
+
+<body>
+	<p id="p1">내용1</p>
+	<p id="p2" class="red">내용2</p>
+	<p id="p3">내용3</p>
+	<p id="p4" class="green">내용4</p>
+	<p id="p5" class="yellow">내용5</p>
+	<p id="p6"></p>
+</body>
+
+</html>

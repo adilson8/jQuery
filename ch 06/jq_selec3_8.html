@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 객체 조작 및 생성 </title>
+
+	<script src="js/jquery.js"></script>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			line-height: 1;
+		}
+
+		#wrap {
+			height: 5000px;
+			padding-top: 2000px;
+		}
+	</style>
+
+	<script>
+		$(function () {
+			var topNum = $("h1").offset().top; // 2000
+
+			// $(window) : 웹 브라우저를 선택하여 제이쿼리 메소드 적용
+			// 적용내용 : 웹브라우저의 스크롤바 위치를 인자값으로 이동
+			$(window).scrollTop(topNum);
+
+			// 인자값 없이 호출하면 현재 웹 브라우저의 위치를 반환
+			var sct = $(window).scrollTop();  // 2000
+			console.log(sct);
+		});
+	</script>
+</head>
+
+<body>
+	<div id="wrap">
+		<h1>위치 메서드</h1>
+	</div>
+</body>
+
+</html>
