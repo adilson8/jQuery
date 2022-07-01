@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 이벤트 </title>
+	<script src="js/jquery.js"></script>
+
+	<script>
+		$(function () {
+			$(".btn1").on("click", function (e) {
+				e.preventDefault();  // 이벤트의 기본동작을 중지!
+				$(".txt1").css({ "background-color": "red" });
+			});
+
+			$(".btn2").on("click", function (e) {
+				$(".txt2").css({ "background-color": "green" });
+				return false;
+			});
+
+			$(".btn3").on("dblclick", function () {
+				$(".txt3").css({ "background-color": "blue" });
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<p><a href="http://www.naver.com/" class="btn1">버튼1</a></p>
+	<p class="txt1">네이버</p>
+	
+	<p><a href="http://www.daum.net/" class="btn2">버튼2</a></p>
+	<p class="txt2">다음</p>
+	
+	<p><button class="btn3">버튼3</button></p>
+	<p class="txt3">내용3</p>
+</body>
+
+</html>

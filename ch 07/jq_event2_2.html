@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 이벤트 </title>
+	<script src="js/jquery.js"></script>
+
+	<script>
+		$(function () {
+			$("#btn1") 
+			    // 선택한 요소노드에 객체(데이터 저장)
+				.data({ "text": "javascript" })
+				.on({ // 객체 리터럴을 이용한 그룹 이벤트 등록
+					"mouseover": overFnc, // 키보드 접근성 무시
+					"mouseout": outFnc    // 키보드 접근성 무시
+				});
+
+			$("#btn2") 
+			    // 선택한 요소노드에 객체(데이터 저장)
+				.data({ "text": "welcome!" })
+				.on({ // 객체 리터럴을 이용한 그룹 이벤트 등록
+					"mouseover focus": overFnc,  // 키보드 접근성 고려
+					"mouseout blur": outFnc      // 키보드 접근성 고려
+				});
+
+			function overFnc() { // hoisting
+				$(".txt").text($(this).data("text")); 
+			}
+			
+			function outFnc() { // hoisting
+				$(".txt").text("");
+			}
+		});
+	</script>
+</head>
+
+<body>
+	<p><button id="btn1">버튼1</button></p>
+	<p><button id="btn2">버튼2</button></p>
+	<p class="txt"></p>
+</body>
+
+</html>
