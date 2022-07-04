@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="UTF-8">
+   <title> Ajax </title>
+   <script src="js/jquery.js"></script>
+
+   <script>
+      $(function () {
+         $("#newsWrap_1").load("ttt.html #news_1"); // ttt.html의 #news_1 태그를 불러와라
+         $("#newsWrap_2").load("ttt.html #news_2"); // ttt.html의 #news_2 태그를 불러와라
+      });
+      // jquery_ajax_news. html
+   </script>
+</head>
+
+<body>
+   <h1>LOAD 1</h1>
+   <div id="newsWrap_1"></div>
+
+   <h1>LOAD 2</h1>
+   <div id="newsWrap_2"></div>
+</body>
+
+</html>

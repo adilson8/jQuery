@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> Ajax </title>
+	<script src="js/jquery.js"></script>
+
+	<script>
+		$(function () {
+			$.ajax({
+				url: "xml/persons.xml",
+
+				dataType: "xml",
+
+				success: function (data) {
+					console.clear();
+					console.group('sucess');
+					console.log(data);
+					console.groupEnd();
+				}, // sucess
+
+				error: function (XHR) {
+					console.group('error');
+					console.log('$.ajax::error() invoked');
+					console.log('\t XHR:', XHR); // XmlHttpRequest 객체
+					console.groupEnd();
+				} // error
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div class="wrap"></div>
+</body>
+
+</html>
+
+<!-- ------------------------- -->
+
+<!-- <!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> Ajax </title>
+	<script src="js/jquery.js"></script>
+
+	<script>
+		$(function () {
+			$.ajax({
+				// url: "xml/persons.xml",
+				url: "http://localhost:8080/temp/persons.xml", // 톰캣으로 해보자
+
+				type: 'post',
+				
+				data: 'name=John&age=23',
+
+				dataType: "xml",
+
+				success: function (data) {
+					console.clear();
+					console.group('sucess');
+					console.log(data);
+					console.groupEnd();
+
+					// 받아온 XML 문서에서 <person>	태그를 모두 찾아라!
+					let persons = $(data).find("person"); // 결과타입: JQuery
+
+					if (persons.length > 0) {
+						let tb = $("<table>");
+
+						$.each(persons, function (i, person) { // i: index, person: element
+							
+							// 각 학생의 정보항목들의 값을 획득
+							let $id = $(person).find("id").text();
+							let $first_name = $(person).find("first_name").text();
+							let $last_name = $(person).find("last_name").text();
+							let $email = $(person).find("email").text();
+							let $gender = $(person).find("gender").text();
+
+							let row = $("<tr>").append(
+								$("<td>").text($id),
+								$("<td>").text($first_name),
+								$("<td>").text($last_name),
+								$("<td>").text($email),
+								$("<td>").text($gender)
+							); // append : 하나의 <tr> 태그가 완성
+							
+							tb.append(row); // 위에서 완성시킨 <tr>태그를 <table> 태그의 하위 노드로 추가
+						}); // $.each
+						
+						$(".wrap").append(tb); // <div> 태그의 하위노드로 <table> 태그를 추가
+					} // if
+				}, // sucess
+
+				error: function (XHR) {
+					console.group('error');
+					console.log('$.ajax::error() invoked');
+					console.log('\t XHR:', XHR); // XmlHttpRequest 객체
+
+					// console.log('\t readyState:', XHR.readyState); // XHR의 상태코드값 출력
+					// console.log('\t', XHR.status);                 // 웹서버의 응답 상태코드 (404)
+					// console.log('\t', XHR.statusText);             // 웹서버의 응답 상태메시지 (Not Found)
+					console.groupEnd();
+				} // error
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div class="wrap"></div>
+</body>
+
+</html> -->
